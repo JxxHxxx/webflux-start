@@ -1,6 +1,7 @@
 package com.example.webfluxstart.group;
 
 import com.example.webfluxstart.group.dto.GroupForm;
+import com.example.webfluxstart.group.dto.GroupResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
@@ -31,8 +32,8 @@ public class GroupHandler {
     public Mono<ServerResponse> findOne(ServerRequest request) {
         Long groupId = Long.valueOf(request.pathVariable("group-id"));
         return groupService.find(groupId)
-
-                .flatMap(group -> ServerResponse.ok().bodyValue(group));
+                .flatMap(group -> ServerResponse.ok().bodyValue(new GroupResponse(group.getName(), group.getLeftCapacity())));
+//                .flatMap(group -> ServerResponse.ok().bodyValue(group));
 
     }
 }

@@ -4,9 +4,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
@@ -32,7 +30,8 @@ public class Group {
         this.leftCapacity = capacity;
     }
 
-    public boolean isWithinRangeCapacity() {
+    // isXxx is 에 반응해서 응답값을 만들어버림 -> check로 시작
+    public boolean checkWithinRangeCapacity() {
         return this.capacity > 5 || this.capacity < 0 ? false : true;
     }
 }
