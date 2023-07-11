@@ -6,8 +6,11 @@ import org.reactivestreams.Subscription;
 import reactor.core.publisher.BaseSubscriber;
 import reactor.core.publisher.Flux;
 
+/**
+ * 데이터 요청 개수를 제어해서 과부하를 방지하는 방식
+ */
 @Slf4j
-public class Example8_1 {
+public class RequestControllerBackPressure {
 
     public static void main(String[] args) {
         Flux
