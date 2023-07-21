@@ -8,7 +8,7 @@ import reactor.core.scheduler.Schedulers;
 public class SubscribeOn {
 
     public static void main(String[] args) throws InterruptedException {
-        Flux.fromArray(new Integer[]{1, 3, 5, 7})
+        Flux.fromArray(new Integer[]{1, 3})
                 .subscribeOn(Schedulers.boundedElastic()) // <- 라인을 제거하면 main 스레드에서 작업을 진행함
                 .doOnNext(data -> log.info("# doOnNext: {}", data))
                 .doOnSubscribe(subscription -> log.info("# doOnSubscribe"))

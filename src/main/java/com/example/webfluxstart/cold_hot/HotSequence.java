@@ -2,6 +2,7 @@ package com.example.webfluxstart.cold_hot;
 
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Sinks;
 
 import java.time.Duration;
 
@@ -17,15 +18,13 @@ public class HotSequence {
         log.info("# Begin concert:");
         Flux<String> concertFlux = Flux
                 .fromArray(singers)
-                .delayElements(Duration.ofSeconds(1)) // emit을 일정시간 동안 지연시키는 Operator
+                .delayElements(Duration.ofSeconds(1)) // emit 을 일정시간 동안 지연시키는 Operator
                 .share(); // cold sequence change to hot sequence
 
         concertFlux.subscribe(
                 singer -> log.info("# Subscriber1 is watching {}'s song", singer)
         );
-
         Thread.sleep(2500L);
-
         concertFlux.subscribe(
                 singer -> log.info("# Subscriber2 is watching {}'s song", singer)
         );

@@ -12,7 +12,7 @@ import reactor.core.scheduler.Schedulers;
 @Slf4j
 public class PublishOn {
     public static void main(String[] args) throws InterruptedException {
-        Flux.fromArray(new Integer[]{1, 3, 5, 7})
+        Flux.fromArray(new Integer[]{1, 3})
                 .doOnNext(data -> log.info("# doOnNext: {}", data))
                 .doOnSubscribe(subscription -> log.info("# doOnSubscribe"))
                 .publishOn(Schedulers.parallel())
