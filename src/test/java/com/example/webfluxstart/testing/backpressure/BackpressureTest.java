@@ -1,6 +1,6 @@
 package com.example.webfluxstart.testing.backpressure;
 
-import com.example.webfluxstart.testing.Backpressure;
+import com.example.webfluxstart.reference_book.testing.Backpressure;
 import org.junit.jupiter.api.Test;
 import reactor.test.StepVerifier;
 

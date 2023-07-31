@@ -1,6 +1,6 @@
 package com.example.webfluxstart.testing.timebased;
 
-import com.example.webfluxstart.testing.TimeBased;
+import com.example.webfluxstart.reference_book.testing.TimeBased;
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;

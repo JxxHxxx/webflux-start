@@ -1,6 +1,6 @@
 package com.example.webfluxstart.testing.basic;
 
-import com.example.webfluxstart.testing.General;
+import com.example.webfluxstart.reference_book.testing.General;
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
